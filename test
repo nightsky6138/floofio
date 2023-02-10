@@ -1,0 +1,91 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta id="versionHash" content="VERSION_HASH_HERE">
+    <meta id="versionID" content="VERSION_ID_HERE">
+    <title>floof.io</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
+
+    <meta name="apple-mobile-web-app-title" content="Floof">
+    <meta name="application-name" content="Floof">
+    <link rel="icon" type="image/png" href="./resources/icons/favicon.png">
+
+    <meta name="theme-color" content="#119911">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body oncontextmenu="return false" class="loaded" data-new-gr-c-s-check-loaded="14.1095.0" data-gr-ext-installed="">
+    <canvas id="canvas" tabindex="0" width="752" height="846"></canvas>
+    <div id="beforeGameStart">
+        <div id="loading" style="display: none;">Loading</div>
+        <div id="mainMenu" style="display: none;">
+            <span class="link" onclick="void toggleChangelog()" id="scroll"></span>
+            <a class="link" href="https://discord.gg/bzvsEvG8Qg" id="discord"></a>
+        </div>
+        <div id="loginMenu" class="textInputContainer" style="display: block; top: -30.7353%;">
+            <input id="username" placeholder="Username"><br>
+            <input id="password" placeholder="Password" type="password"><br>
+            <button onclick="void login()">Login</button><br>
+
+            <span id="infoText">Account is provided by the discord bot (!register [Username])</span>
+        </div>
+        <div id="changelog">
+            <h1>Wave Area</h1>
+            <ul>
+                <li>Added a rudamentary wave area</li><li>Some bullshitfuckery</li><li>I'm dying inside this really ain't cool</li><li>Balanse</li><li>Fixed drops</li><li>Bug fixes</li><li>something else i forgor</li>
+            </ul>
+        <hr>
+            <h1>Discord Links</h1>
+            <ul>
+                <li>You can now link your discord account to your account on the website</li><li>You can now link your discord account to your account in-game</li><li>The discord bot tells server members when and where ultra mobs spawn</li><li>Your highest petal rarity is now the role you have in the discord</li><li>Reset everyone's petal rarity to EPIC at highest</li>
+            </ul>
+        <hr>
+            <h1>Fixes :)</h1>
+            <ul>
+                <li>Added more dimensions for testing</li><li>Drastically optimized aggressive mobs that fire projectiles</li><li>Fixed Lightning</li><li>Fixed a load issue with the client</li><li>Changed the balance of mobs and mob density in oceans, making it harder as you go along</li><li>Made hornets smarter</li><li>Added ultra areas, ultra mobs are much more rare than others, but still common enough for testing</li>
+            </ul>
+        <hr>
+            <h1>Development #2</h1>
+            <ul>
+                <li>Rewrote how mobs were configured</li><li>Added Bees</li><li>Added Ants and an Ant dimension</li><li>Added this start menu</li><li>Even more stuff I can't remember</li>
+            </ul>
+        <hr>
+            <h1>Development #1</h1>
+            <ul>
+                <li>Lots of fun stuff</li><li>Spawn areas and spawn tables</li><li>Optimizations</li><li>Minor refactoring</li><li>Players spawn in the center of the map (0, 0)</li>
+            </ul>
+        </div>
+        <button id="playButton" onclick="void submit()" style="top: -49.5202%;">Play</button>
+    </div>
+    <script>
+        {
+            let loaded = 0,
+                total = 4,
+                enabled = true;
+            Object.defineProperty(window, "loadScript", {
+                value: function () {
+                    if (enabled === false) {
+                        return;
+                    }
+
+                    loaded++;
+
+                    if (loaded === total) {
+                        enabled = false;
+                        window.loadFunc();
+                    }
+                },
+                writable: false,
+                enumerable: false,
+                configurable: false
+            });
+        }
+    </script>
+    <script src="./js/renderPetal.js"></script>
+    <script src="./js/renderMob.js"></script>
+    <script src="./js/startMenu.js"></script>
+    <script src="./js/app.js"></script>
+
+
+</body></html>
